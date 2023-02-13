@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mission6steelea3", "Mission6steelea3\Mission6steelea3.csproj", "{2BB6C27D-61C3-4C0A-BA4B-584B8A9D75A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BB6C27D-61C3-4C0A-BA4B-584B8A9D75A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB6C27D-61C3-4C0A-BA4B-584B8A9D75A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB6C27D-61C3-4C0A-BA4B-584B8A9D75A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB6C27D-61C3-4C0A-BA4B-584B8A9D75A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E38CD499-B0CA-4D3D-9288-C0D417C7C3BA}
+	EndGlobalSection
+EndGlobal
