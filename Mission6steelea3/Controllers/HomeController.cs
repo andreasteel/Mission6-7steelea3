@@ -12,10 +12,13 @@ namespace Mission6steelea3.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private MovieContext _movieContext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        //constructor
+        public HomeController(ILogger<HomeController> logger, MovieContext something)
         {
             _logger = logger;
+            _movieContext = something;
         }
 
         public IActionResult Index()
@@ -32,7 +35,8 @@ namespace Mission6steelea3.Controllers
         [HttpPost]
         public IActionResult MovieForm (MovieFormResponse mfr)
         {
-           
+            _movieContext.Add(mfr);
+            _movieContext.SaveChanges();
             return View("Confirmation", mfr);
         }
 
