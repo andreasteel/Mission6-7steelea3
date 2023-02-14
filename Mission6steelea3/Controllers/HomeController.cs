@@ -32,7 +32,15 @@ namespace Mission6steelea3.Controllers
         [HttpPost]
         public IActionResult MovieForm (MovieFormResponse mfr)
         {
+           
             return View("Confirmation", mfr);
+        }
+
+        [HttpGet]
+        public IActionResult Forms()
+        {
+            
+            return View();
         }
 
         public IActionResult Podcast()
@@ -44,6 +52,10 @@ namespace Mission6steelea3.Controllers
         {
             return View();
         }
+
+        
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
