@@ -24,6 +24,21 @@ namespace Mission6steelea3.Migrations
                 {
                     table.PrimaryKey("PK_responses", x => x.FormId);
                 });
+
+            migrationBuilder.InsertData(
+                table: "responses",
+                columns: new[] { "FormId", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
+                values: new object[] { 1, "Christopher Nolan", false, "", "", "PG-13", "Inception", 2010 });
+
+            migrationBuilder.InsertData(
+                table: "responses",
+                columns: new[] { "FormId", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
+                values: new object[] { 2, "Taika Waititi", false, "", "", "R", "Eagle vs Shark", 2007 });
+
+            migrationBuilder.InsertData(
+                table: "responses",
+                columns: new[] { "FormId", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
+                values: new object[] { 3, "Tyler Nilson, Michael Schwartz", false, "", "", "PG-13", "The Peanut Butter Falcon", 2019 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

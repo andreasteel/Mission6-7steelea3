@@ -8,7 +8,7 @@ using Mission6steelea3.Models;
 namespace Mission6steelea3.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20230214061847_Initial")]
+    [Migration("20230214180418_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,6 +47,41 @@ namespace Mission6steelea3.Migrations
                     b.HasKey("FormId");
 
                     b.ToTable("responses");
+
+                    b.HasData(
+                        new
+                        {
+                            FormId = 1,
+                            Director = "Christopher Nolan",
+                            Edited = false,
+                            LentTo = "",
+                            Notes = "",
+                            Rating = "PG-13",
+                            Title = "Inception",
+                            Year = 2010
+                        },
+                        new
+                        {
+                            FormId = 2,
+                            Director = "Taika Waititi",
+                            Edited = false,
+                            LentTo = "",
+                            Notes = "",
+                            Rating = "R",
+                            Title = "Eagle vs Shark",
+                            Year = 2007
+                        },
+                        new
+                        {
+                            FormId = 3,
+                            Director = "Tyler Nilson, Michael Schwartz",
+                            Edited = false,
+                            LentTo = "",
+                            Notes = "",
+                            Rating = "PG-13",
+                            Title = "The Peanut Butter Falcon",
+                            Year = 2019
+                        });
                 });
 #pragma warning restore 612, 618
         }
