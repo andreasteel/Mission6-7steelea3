@@ -23,6 +23,23 @@ namespace Mission6steelea3.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult MovieForm ()
+        {
+            return View("movieForm");
+        }
+
+        [HttpPost]
+        public IActionResult MovieForm (MovieFormResponse mfr)
+        {
+            return View("Confirmation", mfr);
+        }
+
+        public IActionResult Podcast()
+        {
+            return View("Podcast");
+        }
+
         public IActionResult Privacy()
         {
             return View();
