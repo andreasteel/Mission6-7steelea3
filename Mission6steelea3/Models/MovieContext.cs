@@ -21,12 +21,12 @@ namespace Mission6steelea3.Models
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<Category>().HasData(
-                new Category { CategoryId=1, Categorys="Horror"},
-                new Category { CategoryId = 2, Categorys = "Action" },
-                new Category { CategoryId = 3, Categorys = "Drama" },
-                new Category { CategoryId = 4, Categorys = "Romance" },
-                new Category { CategoryId = 5, Categorys = "SciFi" },
-                new Category { CategoryId = 6, Categorys = "Comedy" }
+                new Category { CategoryId=1, Categories="Horror"},
+                new Category { CategoryId = 2, Categories = "Action" },
+                new Category { CategoryId = 3, Categories = "Drama" },
+                new Category { CategoryId = 4, Categories = "Romance" },
+                new Category { CategoryId = 5, Categories = "SciFi" },
+                new Category { CategoryId = 6, Categories = "Comedy" }
                 );
 
             mb.Entity<MovieFormResponse>().HasData(

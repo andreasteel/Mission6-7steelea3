@@ -11,6 +11,6 @@ namespace Mission6steelea3.Models
         [Key]
         [Required]
         public int CategoryId { get; set; }
-        public string Categorys { get; set; }
+        public string Categories { get; set; }
     }
 }

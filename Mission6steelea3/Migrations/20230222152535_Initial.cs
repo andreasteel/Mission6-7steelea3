@@ -12,7 +12,7 @@ namespace Mission6steelea3.Migrations
                 {
                     CategoryId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Categorys = table.Column<string>(nullable: true)
+                    Categories = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -47,32 +47,32 @@ namespace Mission6steelea3.Migrations
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "CategoryId", "Categorys" },
+                columns: new[] { "CategoryId", "Categories" },
                 values: new object[] { 1, "Horror" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "CategoryId", "Categorys" },
+                columns: new[] { "CategoryId", "Categories" },
                 values: new object[] { 2, "Action" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "CategoryId", "Categorys" },
+                columns: new[] { "CategoryId", "Categories" },
                 values: new object[] { 3, "Drama" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "CategoryId", "Categorys" },
+                columns: new[] { "CategoryId", "Categories" },
                 values: new object[] { 4, "Romance" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "CategoryId", "Categorys" },
+                columns: new[] { "CategoryId", "Categories" },
                 values: new object[] { 5, "SciFi" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "CategoryId", "Categorys" },
+                columns: new[] { "CategoryId", "Categories" },
                 values: new object[] { 6, "Comedy" });
 
             migrationBuilder.InsertData(

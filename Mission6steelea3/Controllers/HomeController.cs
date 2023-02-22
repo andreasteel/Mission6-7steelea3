@@ -27,6 +27,7 @@ namespace Mission6steelea3.Controllers
         [HttpGet]
         public IActionResult MovieForm ()
         {
+            ViewBag.cat = _movieContext.Categories.ToList();
             return View("movieForm");
         }
 

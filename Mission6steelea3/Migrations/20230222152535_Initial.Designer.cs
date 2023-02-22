@@ -8,7 +8,7 @@ using Mission6steelea3.Models;
 namespace Mission6steelea3.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20230222022555_Initial")]
+    [Migration("20230222152535_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace Mission6steelea3.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Categorys")
+                    b.Property<string>("Categories")
                         .HasColumnType("TEXT");
 
                     b.HasKey("CategoryId");
@@ -34,32 +34,32 @@ namespace Mission6steelea3.Migrations
                         new
                         {
                             CategoryId = 1,
-                            Categorys = "Horror"
+                            Categories = "Horror"
                         },
                         new
                         {
                             CategoryId = 2,
-                            Categorys = "Action"
+                            Categories = "Action"
                         },
                         new
                         {
                             CategoryId = 3,
-                            Categorys = "Drama"
+                            Categories = "Drama"
                         },
                         new
                         {
                             CategoryId = 4,
-                            Categorys = "Romance"
+                            Categories = "Romance"
                         },
                         new
                         {
                             CategoryId = 5,
-                            Categorys = "SciFi"
+                            Categories = "SciFi"
                         },
                         new
                         {
                             CategoryId = 6,
-                            Categorys = "Comedy"
+                            Categories = "Comedy"
                         });
                 });
 

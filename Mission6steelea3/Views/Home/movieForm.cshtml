@@ -36,8 +36,14 @@
         <label asp-for="Notes">Movie Notes:</label>
         <input maxlength="25" asp-for="Notes" /><br />
 
-        <label asp-for="Category">Category</label>
-        <input asp-for="Category" />
+        <label asp-for="CategoryId">Category</label>
+        <select asp-for="CategoryId">
+            <option value="">Select a Category</option>
+            @foreach (Category c in ViewBag.cat)
+            {
+                <option value="@c.CategoryId">@c.Categories</option>
+            }
+        </select>
 
         <button type="submit">Submit movie</button>
 
