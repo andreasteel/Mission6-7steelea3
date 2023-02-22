@@ -35,9 +35,17 @@ namespace Mission6steelea3.Controllers
         [HttpPost]
         public IActionResult MovieForm (MovieFormResponse mfr)
         {
-            _movieContext.Add(mfr);
-            _movieContext.SaveChanges();
-            return View("Confirmation", mfr);
+            if (ModelState.IsValid)
+            {
+                _movieContext.Add(mfr);
+                _movieContext.SaveChanges();
+                return View("Confirmation", mfr);
+            }
+            else
+            {
+                ViewBag.cat = _movieContext.Categories.ToList();
+                return View(mfr);
+            }
         }
 
         [HttpGet]
@@ -57,17 +65,25 @@ namespace Mission6steelea3.Controllers
         }
 
 
-
-        public IActionResult Edit ()
+        [HttpGet]
+        public IActionResult Edit (int formId)
         {
             ViewBag.cat = _movieContext.Categories.ToList();
+
+            //var applications = _movieContext.Responses.Single(x => x.FormId == formId);
+
             return View("movieForm");
         }
 
-        public IActionResult Delete ()
+        [HttpPost]
+        public IActionResult Edit (MovieFormResponse blah)
         {
-            return View();
+            _movieContext.Update(blah);
+            _movieContext.SaveChanges();
+            return RedirectToAction("Category");
         }
+
+        publie
      
     }
 }

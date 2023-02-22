@@ -12,6 +12,7 @@ namespace Mission6steelea3.Models
         [Required]
         public int FormId { get; set; }
         public string Title { get; set; }
+        [Required (ErrorMessage = "The Title needs to be entered")]
         public int Year { get; set; }
         public string Director { get; set; }
         public string Notes { get; set; }
