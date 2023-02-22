@@ -8,7 +8,7 @@ using Mission6steelea3.Models;
 namespace Mission6steelea3.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20230214180418_Initial")]
+    [Migration("20230222022555_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,10 +17,59 @@ namespace Mission6steelea3.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.22");
 
+            modelBuilder.Entity("Mission6steelea3.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Categorys")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            Categorys = "Horror"
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            Categorys = "Action"
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            Categorys = "Drama"
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            Categorys = "Romance"
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            Categorys = "SciFi"
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            Categorys = "Comedy"
+                        });
+                });
+
             modelBuilder.Entity("Mission6steelea3.Models.MovieFormResponse", b =>
                 {
                     b.Property<int>("FormId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CategoryId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Director")
@@ -46,12 +95,15 @@ namespace Mission6steelea3.Migrations
 
                     b.HasKey("FormId");
 
-                    b.ToTable("responses");
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Responses");
 
                     b.HasData(
                         new
                         {
                             FormId = 1,
+                            CategoryId = 5,
                             Director = "Christopher Nolan",
                             Edited = false,
                             LentTo = "",
@@ -63,6 +115,7 @@ namespace Mission6steelea3.Migrations
                         new
                         {
                             FormId = 2,
+                            CategoryId = 4,
                             Director = "Taika Waititi",
                             Edited = false,
                             LentTo = "",
@@ -74,6 +127,7 @@ namespace Mission6steelea3.Migrations
                         new
                         {
                             FormId = 3,
+                            CategoryId = 3,
                             Director = "Tyler Nilson, Michael Schwartz",
                             Edited = false,
                             LentTo = "",
@@ -82,6 +136,15 @@ namespace Mission6steelea3.Migrations
                             Title = "The Peanut Butter Falcon",
                             Year = 2019
                         });
+                });
+
+            modelBuilder.Entity("Mission6steelea3.Models.MovieFormResponse", b =>
+                {
+                    b.HasOne("Mission6steelea3.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

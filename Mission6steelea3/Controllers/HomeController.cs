@@ -11,13 +11,11 @@ namespace Mission6steelea3.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private MovieContext _movieContext { get; set; }
 
         //constructor
-        public HomeController(ILogger<HomeController> logger, MovieContext something)
+        public HomeController(MovieContext something)
         {
-            _logger = logger;
             _movieContext = something;
         }
 
@@ -43,28 +41,17 @@ namespace Mission6steelea3.Controllers
         [HttpGet]
         public IActionResult Forms()
         {
-            
-            return View();
+            var applications = _movieContext.Responses
+                .OrderBy(x => x.Title)
+                .ToList();
+
+            return View(applications);
         }
 
         public IActionResult Podcast()
         {
             return View("Podcast");
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        
-
-
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+     
     }
 }

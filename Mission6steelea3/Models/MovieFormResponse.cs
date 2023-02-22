@@ -19,5 +19,7 @@ namespace Mission6steelea3.Models
         public bool Edited { get; set; }
         public string LentTo { get; set; }
 
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
     }
 }
