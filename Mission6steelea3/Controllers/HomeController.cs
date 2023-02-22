@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Mission6steelea3.Models;
 using System;
@@ -43,6 +44,7 @@ namespace Mission6steelea3.Controllers
         public IActionResult Forms()
         {
             var applications = _movieContext.Responses
+                .Include(x => x.Category)
                 .OrderBy(x => x.Title)
                 .ToList();
 
@@ -52,6 +54,19 @@ namespace Mission6steelea3.Controllers
         public IActionResult Podcast()
         {
             return View("Podcast");
+        }
+
+
+
+        public IActionResult Edit ()
+        {
+            ViewBag.cat = _movieContext.Categories.ToList();
+            return View("movieForm");
+        }
+
+        public IActionResult Delete ()
+        {
+            return View();
         }
      
     }
