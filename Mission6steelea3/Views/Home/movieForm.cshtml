@@ -9,6 +9,9 @@
     <form method="post">
         <div asp-validation-summary="All"></div>
 
+        <label asp-for="FormId">FormId:</label>
+        <input required="required" asp-for="FormId" /><br />
+
         <label asp-for="Title">Movie Title:</label>
         <input required="required" asp-for="Title" /><br />
 

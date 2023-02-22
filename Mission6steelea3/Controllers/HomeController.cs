@@ -70,9 +70,9 @@ namespace Mission6steelea3.Controllers
         {
             ViewBag.cat = _movieContext.Categories.ToList();
 
-            var applications = _movieContext.Responses.Single(x => x.FormId == formId);
+            //var applications = _movieContext.Responses.Single(x => x.FormId == formId);
 
-            return View("movieForm", applications);
+            return View("movieForm");
         }
 
         [HttpPost]
@@ -86,8 +86,8 @@ namespace Mission6steelea3.Controllers
         [HttpGet]
         public IActionResult Delete(int formId)
         {
-            var app =_movieContext.Responses.Single(x => x.FormId == formId);
-            return View(app);
+            //var app =_movieContext.Responses.Single(x => x.FormId == formId);
+            return View("Delete");
         }
 
         [HttpPost]

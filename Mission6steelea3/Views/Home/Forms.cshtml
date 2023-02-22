@@ -7,6 +7,7 @@
 <table class="table table-bordered table-striped">
     <thead class="font-weight-bold">
         <tr>
+            <td>Form Id</td>
             <td>Title</td>
             <td>Year</td>
             <td>Director</td>
@@ -22,6 +23,7 @@
         @foreach (var x in Model)
             {
         <tr>
+            <td>@x.FormId</td>
             <td>@x.Title</td>
             <td>@x.Year</td>
             <td>@x.Director</td>

@@ -8,7 +8,7 @@ using Mission6steelea3.Models;
 namespace Mission6steelea3.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20230222152535_Initial")]
+    [Migration("20230222162837_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
