@@ -70,9 +70,9 @@ namespace Mission6steelea3.Controllers
         {
             ViewBag.cat = _movieContext.Categories.ToList();
 
-            //var applications = _movieContext.Responses.Single(x => x.FormId == formId);
+            var applications = _movieContext.Responses.Single(x => x.FormId == formId);
 
-            return View("movieForm");
+            return View("movieForm", applications);
         }
 
         [HttpPost]
@@ -83,7 +83,21 @@ namespace Mission6steelea3.Controllers
             return RedirectToAction("Category");
         }
 
-        publie
-     
+        [HttpGet]
+        public IActionResult Delete(int formId)
+        {
+            var app =_movieContext.Responses.Single(x => x.FormId == formId);
+            return View(app);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(MovieFormResponse mfr)
+        {
+            _movieContext.Responses.Remove(mfr);
+            _movieContext.SaveChanges();
+
+            return RedirectToAction("Forms");
+        }
+
     }
 }
