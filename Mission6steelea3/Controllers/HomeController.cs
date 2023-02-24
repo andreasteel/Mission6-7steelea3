@@ -80,7 +80,8 @@ namespace Mission6steelea3.Controllers
         {
             _movieContext.Update(blah);
             _movieContext.SaveChanges();
-            return RedirectToAction("Category");
+
+            return RedirectToAction("Forms");
         }
 
         [HttpGet]
