@@ -66,13 +66,13 @@ namespace Mission6steelea3.Controllers
 
 
         [HttpGet]
-        public IActionResult Edit (int formId)
+        public IActionResult Edit (int id)
         {
             ViewBag.cat = _movieContext.Categories.ToList();
 
-            //var applications = _movieContext.Responses.Single(x => x.FormId == formId);
+            var movie = _movieContext.Responses.Single(x => x.FormId == id);
 
-            return View("movieForm");
+            return View("movieForm", movie);
         }
 
         [HttpPost]
@@ -84,10 +84,10 @@ namespace Mission6steelea3.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int formId)
+        public IActionResult Delete(int id)
         {
-            //var app =_movieContext.Responses.Single(x => x.FormId == formId);
-            return View("Delete");
+            var movie =_movieContext.Responses.Single(x => x.FormId == id);
+            return View("Delete", movie);
         }
 
         [HttpPost]

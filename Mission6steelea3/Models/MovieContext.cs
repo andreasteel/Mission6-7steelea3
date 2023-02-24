@@ -9,7 +9,7 @@ namespace Mission6steelea3.Models
     public class MovieContext : DbContext
     {
         //constructor
-        public MovieContext (DbContextOptions<MovieContext> options) : base (options)
+        public MovieContext (DbContextOptions<MovieContext> options) : base(options)
         {
             //leave for now
         }

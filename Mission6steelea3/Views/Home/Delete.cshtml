@@ -1,13 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Delete";
 }
-
+@model MovieFormResponse
 <h2>Confirm Deletion</h2>
 
-<form method="post" asp-action="Delete">
+<form method="post" asp-controller="Home" asp-action="Delete">
     <button type="submit">Delete</button>
-    <a asp-controller="Home" asp-action="Forms" class="btn btn-primary">Cancel</a>
+    <a asp-action="Forms" class="btn btn-primary">Cancel</a>
 
-    
+    <input type="hidden" asp-for="FormId" />
  
 </form>

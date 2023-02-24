@@ -4,3 +4,10 @@
 @model Mission6steelea3.Models.MovieFormResponse
 
 <h2>Your new movie, (@Model.Title), has been recorded!</h2>
+
+<form method="post" asp-controller="Home" asp-action="Confirmation">
+   
+    <a asp-action="Forms" class="btn btn-primary">Done</a>
+
+    <input type="hidden" asp-for="FormId" />
+</form>
